@@ -73,7 +73,7 @@ if __name__ == "__main__":
     state_size = env.observation_space.shape[0]
     action_size = env.action_space.n
     agent = DQNAgent(state_size, action_size)
-    # agent.load("./save/cartpole-dqn.h5")
+    agent.load("./save/cartpole-dqn.h5")
     done = False
     batch_size = 32
 
@@ -95,5 +95,5 @@ if __name__ == "__main__":
                 break
             if len(agent.memory) > batch_size:
                 agent.replay(batch_size)
-        # if e % 10 == 0:
-        #     agent.save("./save/cartpole-dqn.h5")
+        if e % 10 == 0:
+            agent.save("./save/cartpole-dqn.h5")

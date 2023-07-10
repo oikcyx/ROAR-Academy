@@ -1,10 +1,3 @@
-## This is course material for Introduction to Modern Artificial Intelligence
-## Example code: mlp.py
-## Author: Allen Y. Yang
-##
-## (c) Copyright 2020. Intelligent Racing Inc. Not permitted for commercial use
-
-# Load dependencies
 from keras.models import Sequential
 from keras.layers import Dense
 import numpy as np
@@ -63,8 +56,8 @@ testingX = samples[randomOrder[100:200], :]
 testingY = labels[randomOrder[100:200], :]
 
 model = Sequential()
-# model.add(Dense(4, input_shape=(2,), activation='sigmoid', use_bias=True))
-model.add(Dense(4, input_shape=(2,), activation='relu', use_bias=True))
+model.add(Dense(4, input_shape=(2,), activation='sigmoid', use_bias=True))
+model.add(Dense(4, activation='relu', use_bias=True))
 model.add(Dense(2, activation='softmax' ))
 model.compile(loss='mean_squared_error', optimizer='sgd', metrics=['binary_accuracy'])
 
